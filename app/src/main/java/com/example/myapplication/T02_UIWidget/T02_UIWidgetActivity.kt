@@ -25,6 +25,15 @@ class T02_UIWidgetActivity : AppCompatActivity() {
         myCheckBox.setOnClickListener {
             val isChecked = (it as CheckBox).isChecked
         }
+
+        radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            when(checkedId) {
+                R.id.radioButton1 -> {Toast.makeText(this, "radio1 is selected", Toast.LENGTH_SHORT).show()}
+                R.id.radioButton2 -> {Toast.makeText(this, "radio2 is selected", Toast.LENGTH_SHORT).show()}
+                R.id.radioButton3 -> {Toast.makeText(this, "radio3 is selected", Toast.LENGTH_SHORT).show()}
+            }
+
+        }
     }
 
 
