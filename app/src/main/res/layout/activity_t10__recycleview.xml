@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".T10_Recycleview.T10_Recycleview">
+    tools:context=".T10_Recyclerview.T10_Recyclerview">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myRecyclerView"

@@ -1,10 +1,13 @@
-package com.example.myapplication.T10_Recycleview
+package com.example.myapplication.T10_Recyclerview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
+import kotlinx.android.synthetic.main.activity_t10__recycleview.*
 
-class T10_Recycleview : AppCompatActivity() {
+class T10_Recyclerview : AppCompatActivity() {
 
     data class MyData(val title:String, val desc:String, val img:Int)
     val myList = ArrayList<MyData>();
@@ -12,6 +15,9 @@ class T10_Recycleview : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_t10__recycleview)
+        generateData()
+        myRecyclerView.adapter = MyRecyclerAdapter(myList)
+        myRecyclerView.layoutManager = LinearLayoutManager(this)
     }
 
     fun generateData() {

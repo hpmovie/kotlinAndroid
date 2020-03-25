@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".T10_Recycleview.T10_Recycleview">
+        <activity android:name=".T10_Recyclerview.T10_Recyclerview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
