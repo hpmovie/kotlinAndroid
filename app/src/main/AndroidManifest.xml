@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".T04_listview.T04_ListView">
+        <activity android:name=".T05_CustomListView.T05_CustomListView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".T03_Activity.T03_NewActivity" />
-        <activity android:name=".T03_Activity.T03_Activity">
+        <activity android:name=".T04_listview.T04_ListView">
         </activity>
+        <activity android:name=".T03_Activity.T03_NewActivity" />
+        <activity android:name=".T03_Activity.T03_Activity"></activity>
         <activity android:name=".T02_UIWidget.T02_UIWidgetActivity" />
         <activity android:name=".T01_Menu.T01_Menu" />
         <activity android:name=".MainActivity" />
