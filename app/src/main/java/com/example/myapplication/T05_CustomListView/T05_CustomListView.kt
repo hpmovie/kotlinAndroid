@@ -42,7 +42,7 @@ class T05_CustomListView : AppCompatActivity() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             var v = convertView
             if(v == null) {
-                val v = LayoutInflater.from(parent?.context)
+                v = LayoutInflater.from(parent?.context)
                     .inflate(R.layout.item_custom_listview, parent, false)
             }
 

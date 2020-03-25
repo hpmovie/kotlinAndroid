@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".T09_XML.T09_XML">
 
-    <TextView
-        android:id="@+id/tvWeather"
+    <ListView
+        android:id="@+id/WeatherListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
