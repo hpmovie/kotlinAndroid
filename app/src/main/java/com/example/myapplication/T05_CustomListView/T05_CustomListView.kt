@@ -6,8 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.TextView
 import com.example.myapplication.R
 import kotlinx.android.synthetic.main.activity_t05__custom_list_view.*
+import kotlinx.android.synthetic.main.item_custom_listview.*
 
 class T05_CustomListView : AppCompatActivity() {
     data class MyData(val title:String, val desc:String, val img:Int)
@@ -17,7 +20,13 @@ class T05_CustomListView : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_t05__custom_list_view)
         generateData()
-        customListView
+        val myAdapter = MyCustomAdapter()
+        customListView.adapter = myAdapter
+        btnReload.setOnClickListener {
+            generateData()
+            myAdapter.notifyDataSetChanged()
+        }
+
     }
 
     fun generateData() {
@@ -31,9 +40,20 @@ class T05_CustomListView : AppCompatActivity() {
     // inner class 사용안하면 myList를 생성자에 전달해줘야 함
     inner class MyCustomAdapter:BaseAdapter() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            val v = LayoutInflater.from(parent?.context)
-                .inflate(R.layout.item_custom_listview, parent, false)
+            var v = convertView
+            if(v == null) {
+                val v = LayoutInflater.from(parent?.context)
+                    .inflate(R.layout.item_custom_listview, parent, false)
+            }
 
+            val data = myList[position]
+            val tvTitle: TextView = v!!.findViewById(R.id.tvTitle)
+            val tvDesc: TextView = v.findViewById(R.id.tvDesc)
+            val itemImageView: ImageView = v.findViewById(R.id.itemImageView)
+            tvTitle?.text = data.title
+            tvDesc?.text = data.desc
+            itemImageView.setImageResource(data.img)
+            return v;
         }
 
         override fun getItem(position: Int): Any {
