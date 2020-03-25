@@ -50,8 +50,8 @@ class T05_CustomListView : AppCompatActivity() {
             val tvTitle: TextView = v!!.findViewById(R.id.tvTitle)
             val tvDesc: TextView = v.findViewById(R.id.tvDesc)
             val itemImageView: ImageView = v.findViewById(R.id.itemImageView)
-            tvTitle?.text = data.title
-            tvDesc?.text = data.desc
+            tvTitle.text = data.title
+            tvDesc.text = data.desc
             itemImageView.setImageResource(data.img)
             return v;
         }
