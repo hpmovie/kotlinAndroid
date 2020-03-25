@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,16 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".T07_thread.T07_Thread">
+        <activity android:name=".T09_XML.T09_XML">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".T06_AlertDialog.T06_AlertDialog">
+        <activity android:name=".T08_AsyncTask.T08_AsyncTask">
         </activity>
-        <activity android:name=".T05_CustomListView.T05_CustomListView"></activity>
+        <activity android:name=".T07_thread.T07_Thread"></activity>
+        <activity android:name=".T06_AlertDialog.T06_AlertDialog" />
+        <activity android:name=".T05_CustomListView.T05_CustomListView" />
         <activity android:name=".T04_listview.T04_ListView" />
         <activity android:name=".T03_Activity.T03_NewActivity" />
         <activity android:name=".T03_Activity.T03_Activity" />

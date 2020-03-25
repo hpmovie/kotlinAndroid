@@ -33,6 +33,7 @@ class T07_Thread : AppCompatActivity() {
                     val msg = myHandler.obtainMessage()
                     msg.what = MY_COUNT
                     msg.arg1 = i
+
                     myHandler.sendMessage(msg)
                 }
             }.start()
