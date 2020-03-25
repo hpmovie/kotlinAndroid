@@ -12,23 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".T10_Recyclerview.T10_Recyclerview">
+        <activity android:name=".P01_weather.P01_weather">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".T09_XML.T09_XML">
-
+        <activity android:name=".T10_Recyclerview.T10_Recyclerview">
 
         </activity>
-        <activity android:name=".T08_AsyncTask.T08_AsyncTask"></activity>
+        <activity android:name=".T09_XML.T09_XML"></activity>
+        <activity android:name=".T08_AsyncTask.T08_AsyncTask" />
         <activity android:name=".T07_thread.T07_Thread" />
         <activity android:name=".T06_AlertDialog.T06_AlertDialog" />
-        <activity android:name=".T05_CustomListView.T05_CustomListView" >
-
-        </activity>
+        <activity android:name=".T05_CustomListView.T05_CustomListView"></activity>
         <activity android:name=".T04_listview.T04_ListView" />
         <activity android:name=".T03_Activity.T03_NewActivity" />
         <activity android:name=".T03_Activity.T03_Activity" />
