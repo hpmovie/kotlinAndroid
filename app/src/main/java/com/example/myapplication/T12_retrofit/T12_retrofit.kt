@@ -10,13 +10,23 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.Path
 
 class T12_retrofit : AppCompatActivity() {
     data class MyPost(val userId:Int, val id:Int, val title:String, val body:String)
     interface MyTypicodeInterface {
-        @GET("post")
+        @GET("posts")
         fun getPosts(): Call<List<MyPost>>
+
+        @GET("posts/{id}")
+        fun getPost(@Path("id") id:Int): Call<MyPost>
+
+        @POST("posts")
+        fun createPost(@Body post:MyPost) : Call<MyPost>
+
     }
     lateinit var myTypicode:MyTypicodeInterface
 
@@ -30,7 +40,45 @@ class T12_retrofit : AppCompatActivity() {
             .build()
 
         myTypicode = retrofit.create(MyTypicodeInterface::class.java)
-        myTypicode.getPosts()
+       // getPosts()
+       // getPost(100)
+        createPost()
+    }
+
+    fun createPost() {
+        val post = MyPost(11, 12, "my title", "my body")
+        val call = myTypicode.createPost(post)
+        call.enqueue(object: Callback<MyPost> {
+            override fun onFailure(call: Call<MyPost>, t: Throwable) {
+
+            }
+
+            override fun onResponse(call: Call<MyPost>, response: Response<MyPost>) {
+                val post = response.body()
+                Log.d("post", "create post ${post.toString()}")
+            }
+
+        })
+
+    }
+
+    fun getPost(id:Int) {
+        val call = myTypicode.getPost(id)
+        call.enqueue(object: Callback<MyPost> {
+            override fun onFailure(call: Call<MyPost>, t: Throwable) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onResponse(call: Call<MyPost>, response: Response<MyPost>) {
+                if(response.isSuccessful == false) {
+                    Toast.makeText(this@T12_retrofit, "error ${response.code()}", Toast.LENGTH_SHORT).show()
+                    return
+                }
+                val post = response.body()
+                Log.d("post", post.toString())
+            }
+
+        })
     }
 
     fun getPosts() {
@@ -42,7 +90,7 @@ class T12_retrofit : AppCompatActivity() {
 
             override fun onResponse(call: Call<List<MyPost>>, response: Response<List<MyPost>>) {
                 if(response.isSuccessful == false) {
-                    Toast.makeText(this@T12_retrofit, "error ${repose.code()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@T12_retrofit, "error ${response.code()}", Toast.LENGTH_SHORT).show()
                     return
                 }
                 val posts = response.body()
