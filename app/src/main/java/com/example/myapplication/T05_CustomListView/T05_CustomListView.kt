@@ -66,7 +66,6 @@ class T05_CustomListView : AppCompatActivity() {
 
         override fun getCount(): Int {
             return myList.size
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 
     }
