@@ -44,13 +44,12 @@ class WeatherAdapter(val myList:ArrayList<P01_weather.MyWeatherData>): RecyclerV
             val strDate = df.format(cal.time)
             tvTitle.text = "${strDate} ${data.hour}시"
             tvDesc.text = "${data.wfkor} ${data.temp}c"
-            val res =R.mipmap.ic_launcher
-            /*when{
-                data.wfKor.contains("구름")-> R.drawable.ic_cloud_black_24dp
-                data.wfKor.contains("비")-> R.drawable.ic_umbrella_black_24dp
-                data.wfKor.contains("맑음")-> R.drawable.ic_wb_sunny_black_24dp
+            val res = when{
+                data.wfkor.contains("구름")-> R.drawable.ic_wb_cloudy_black_24dp
+                data.wfkor.contains("비")-> R.drawable.ic_dialpad_black_24dp
+                data.wfkor.contains("맑음")-> R.drawable.ic_wb_sunny_black_24dp
                 else -> R.mipmap.ic_launcher
-            }*/
+            }
             itemImageView.setImageResource(res)
         }
     }

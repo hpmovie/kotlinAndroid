@@ -46,7 +46,7 @@ class P01_weather : AppCompatActivity() {
                     when (startTag) {
                         "hour" -> {
                             val hour = xpp.text.toInt()
-                            data = MyWeatherData(0,0, 0.0f,"")
+                            data = MyWeatherData(hour,0, 0.0f,"")
                             myWeatherList.add(data)
                         }
                         "day" -> { data.day = xpp.text.toInt()}
