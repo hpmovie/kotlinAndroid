@@ -2,7 +2,9 @@ package com.example.myapplication.T11_json
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.myapplication.R
+import com.google.gson.Gson
 import org.json.JSONArray
 
 class T11_Json : AppCompatActivity() {
@@ -14,12 +16,17 @@ class T11_Json : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_t11_json)
-        parsingJSON()
+        setContentView(R.layout.activity_t11__json)
+       // parsingJSON()
+        parsingWithGSON()
     }
 
     fun parsingWithGSON() {
+        val myList = Gson().fromJson(str, Array<User>::class.java)
 
+        for(obj in myList) {
+            Log.d("gson", obj.toString())
+        }
     }
 
     fun parsingJSON() {
