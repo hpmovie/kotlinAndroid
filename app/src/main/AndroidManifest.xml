@@ -12,16 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".T20_style.T20_style">
+        <activity android:name=".T21_Camera.T21_Camera">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".T19_fragment.T19_fragment">
-
+        <activity android:name=".T20_style.T20_style">
         </activity>
+        <activity android:name=".T19_fragment.T19_fragment"></activity>
 
         <service
             android:name=".T18_service.MyIntentService2"
