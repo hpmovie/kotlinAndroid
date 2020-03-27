@@ -44,7 +44,8 @@ class T19_fragment : AppCompatActivity(), View.OnClickListener {
                         CounterFragment()
                     }
                     val tag = if(newFragment is CounterFragment) "counter" else "blank"
-                    tr.replace(R.id.containerLayout, newFragment, tag).commit()
+                    tr.replace(R.id.containerLayout, newFragment, tag)
+                        .addToBackStack(null).commit()
                 }
             }
 
